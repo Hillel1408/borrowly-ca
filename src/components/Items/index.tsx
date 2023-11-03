@@ -27,16 +27,16 @@ const Items = () => {
   return (
     <div className="pb-6">
       <div className="container">
-        <div className="p-4 bg-white grid grid-cols-[1fr_auto] gap-3 rounded-xl -translate-y-1/2">
+        <div className="p-4 bg-white grid grid-cols-[1fr_auto] gap-3 rounded-xl -translate-y-1/2 md:grid-cols-[1fr]">
           <input
             type="text"
             placeholder="Enter an amount"
             className="py-5 px-4 rounded-xl bg-[#F2F2F2] text-[16px] text-[#9198A1] leading-[125%]"
           />
-          <Button text="Search" className="w-[310px] text-[16px]" />
+          <Button text="Search" className="w-[310px] text-[16px] md:w-full" />
         </div>
 
-        <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-[17px]">
+        <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-[17px] lg:grid-cols-[1fr_1fr_1fr_1fr] md:grid-cols-[1fr_1fr_1fr] sm:grid-cols-[1fr_1fr]">
           {navItems.map((item) => (
             <div className="rounded-xl bg-white p-3">
               <div className="h-[72px] w-full bg-[#F3F3F3] mg-[5px] rounded-xl"></div>
@@ -80,7 +80,7 @@ const Items = () => {
             </ul>
           </div>
 
-          <div className="grid grid-cols-[1fr_1fr_1fr_1fr] mt-6 gap-[17px]">
+          <div className="grid grid-cols-[1fr_1fr_1fr_1fr] mt-6 gap-[17px] lg:grid-cols-[1fr_1fr_1fr] md:grid-cols-[1fr_1fr] sm:grid-cols-[1fr]">
             {new Array(12).fill("").map((item, index) => (
               <div className="p-3 rounded-xl bg-white flex flex-col gap-3 items-start">
                 <div className="border-2 border-[#DDD] rounded-[14px]">

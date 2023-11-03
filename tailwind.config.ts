@@ -19,7 +19,7 @@ module.exports = {
           "-webkitTapHighlightColor": "transparent",
         },
         body: {
-          minWidth: "320px",
+          minWidth: "350px",
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
