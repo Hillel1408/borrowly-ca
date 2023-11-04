@@ -3,6 +3,8 @@ import Footer from "@src/components/Footer";
 import Button from "@src/components/Button";
 import Logo from "@src/components/Logo";
 import Intro from "@src/components/Intro";
-import Items from "@src/components/Items";
+import LoanPurposes from "@src/components/LoanPurposes";
+import Sort from "@src/components/Sort";
+import Search from "@src/components/Search";
 
-export { Header, Footer, Button, Logo, Intro, Items };
+export { Header, Footer, Button, Logo, Intro, LoanPurposes, Sort, Search };
