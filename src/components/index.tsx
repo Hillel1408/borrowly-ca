@@ -6,5 +6,16 @@ import Intro from "@src/components/Intro";
 import LoanPurposes from "@src/components/LoanPurposes";
 import Sort from "@src/components/Sort";
 import Search from "@src/components/Search";
+import Items from "@src/components/Items";
 
-export { Header, Footer, Button, Logo, Intro, LoanPurposes, Sort, Search };
+export {
+  Header,
+  Footer,
+  Button,
+  Logo,
+  Intro,
+  LoanPurposes,
+  Sort,
+  Search,
+  Items,
+};
