@@ -8,16 +8,9 @@ export const getLoanPurposes = async () => {
   return response.json();
 };
 
-export const getFilteredOffers = async (params: {
-  [key: string]: string | string[] | undefined;
-}) => {
+export const getFilteredOffers = async (params: string) => {
   const response = await fetch(
-    `https://api.borrowly.ca/filteredOffers?${
-      params.amount && `amount=${params.amount}`
-    }&${
-      params.sort_by &&
-      `sort_by=${params.sort_by}&sort_order=${params.sort_order}`
-    }`,
+    `https://api.borrowly.ca/filteredOffers?${params}`,
     { cache: "no-store" }
   );
 

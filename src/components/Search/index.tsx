@@ -6,11 +6,11 @@ import { useState } from "react";
 
 const Search = () => {
   const searchParams = useSearchParams();
-  const search = searchParams.get("search") || "";
+  const amount = searchParams.get("amount") || "";
   const sort_by = searchParams.get("sort_by") || "";
   const sort_order = searchParams.get("sort_order") || "";
 
-  const [searchValue, setSeacrh] = useState(search);
+  const [searchValue, setSeacrh] = useState(amount);
 
   const router = useRouter();
 
@@ -29,7 +29,7 @@ const Search = () => {
         className="w-[310px] text-[16px] md:w-full"
         clickHandler={() => {
           router.push(
-            `/?${searchValue && `search=${searchValue}&`}${
+            `/?${searchValue && `amount=${searchValue}&`}${
               sort_by && `sort_by=${sort_by}&sort_order=${sort_order}`
             }`,
             {

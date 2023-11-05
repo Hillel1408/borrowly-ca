@@ -10,7 +10,7 @@ const Sort = () => {
   const router = useRouter();
 
   const searchParams = useSearchParams();
-  const search = searchParams.get("search") || "";
+  const amount = searchParams.get("amount") || "";
   const sort_by = searchParams.get("sort_by") || "";
   const sort_order = searchParams.get("sort_order") || "";
 
@@ -89,7 +89,7 @@ const Sort = () => {
               setActiveSort(index);
               setShowSort(false);
               router.push(
-                `/?${search && `search=${search}&`}sort_by=${
+                `/?${amount && `amount=${amount}&`}sort_by=${
                   sortItems[index].sort_by
                 }&sort_order=${sortItems[index].sort_order}`,
                 {

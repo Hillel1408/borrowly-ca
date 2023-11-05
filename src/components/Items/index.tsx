@@ -7,11 +7,13 @@ export default async function Items({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const data = await getFilteredOffers({
-    amount: searchParams.search,
-    sort_by: searchParams.sort_by,
-    sort_order: searchParams.sort_order,
-  });
+  const data = await getFilteredOffers(
+    Object.keys(searchParams)
+      .map((item) => {
+        return item + "=" + searchParams[item];
+      })
+      .join("&")
+  );
 
   return (
     <div className="grid grid-cols-[1fr_1fr_1fr_1fr] mt-6 gap-[17px] lg:grid-cols-[1fr_1fr_1fr] md:grid-cols-[1fr_1fr] sm:grid-cols-[1fr]">
