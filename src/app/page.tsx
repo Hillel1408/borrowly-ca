@@ -7,7 +7,13 @@ export const metadata: Metadata = {
   description: "",
 };
 
-export default function Home() {
+type Props = {
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default function Home(props: Props) {
+  const searchParams = props.searchParams;
+
   return (
     <main className="bg-[#f2f2f2]">
       <Intro />
@@ -20,7 +26,7 @@ export default function Home() {
           <div className="pt-6">
             <Sort />
 
-            <Items />
+            <Items searchParams={searchParams} />
           </div>
         </div>
       </div>
