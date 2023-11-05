@@ -41,8 +41,7 @@ const Sort = () => {
 
   const [activeSort, setActiveSort] = useState(
     sortItems.findIndex((item, index) => {
-      if (item.sort_by === sort_by && item.sort_order === sort_order)
-        return index;
+      return item.sort_by === sort_by && item.sort_order === sort_order;
     })
   );
 
