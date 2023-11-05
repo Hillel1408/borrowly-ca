@@ -35,7 +35,7 @@ export default async function Items({
               [&>li>span:last-child]:font-semibold"
             >
               <li>
-                <span>Loan amount (min)</span>
+                <span>Company name (min)</span>
                 <span>{item.company_name}</span>
               </li>
 
