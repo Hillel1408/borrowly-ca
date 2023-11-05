@@ -19,7 +19,7 @@ const Search = () => {
       <input
         type="text"
         placeholder="Enter an amount"
-        className="py-5 px-4 rounded-xl bg-[#F2F2F2] text-[16px] text-[#9198A1] leading-[125%]"
+        className="py-5 px-4 rounded-xl bg-[#F2F2F2] text-[16px] placeholder:text-[#9198A1] text-[#000]"
         value={searchValue ? String(searchValue) : ""}
         onChange={(e) => setSeacrh(e.target.value)}
       />
@@ -29,8 +29,8 @@ const Search = () => {
         clickHandler={() => {
           router.push(
             `/?${searchValue && `search=${searchValue}&`}${
-              sort_by && `sort_by=${sort_by}`
-            }${sort_order && `&sort_order=${sort_order}`}`,
+              sort_by && `sort_by=${sort_by}&sort_order=${sort_order}`
+            }`,
             {
               scroll: false,
             }

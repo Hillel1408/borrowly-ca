@@ -8,7 +8,6 @@ export default async function Items({ searchParams }: { searchParams: any }) {
     sort_by: searchParams.sort_by,
     sort_order: searchParams.sort_order,
   });
-  console.log(searchParams.sort_by);
 
   return (
     <div className="grid grid-cols-[1fr_1fr_1fr_1fr] mt-6 gap-[17px] lg:grid-cols-[1fr_1fr_1fr] md:grid-cols-[1fr_1fr] sm:grid-cols-[1fr]">
@@ -31,6 +30,11 @@ export default async function Items({ searchParams }: { searchParams: any }) {
               [&>li>span:first-child]:text-[13px] [&>li>span:first-child]:leading-[123%] [&>li>span:last-child]:text-[15px] [&>li>span:last-child]:leading-[120%]
               [&>li>span:last-child]:font-semibold"
             >
+              <li>
+                <span>Loan amount (min)</span>
+                <span>{item.company_name}</span>
+              </li>
+
               <li>
                 <span>Loan amount (min)</span>
                 <span>{item.min_loan_amount}</span>

@@ -6,12 +6,13 @@ import classNames from "classnames";
 
 const Sort = () => {
   const [showSort, setShowSort] = useState(false);
-  const [activeSort, setActiveSort] = useState(5);
 
   const router = useRouter();
 
   const searchParams = useSearchParams();
   const search = searchParams.get("search") || "";
+  const sort_by = searchParams.get("sort_by") || "";
+  const sort_order = searchParams.get("sort_order") || "";
 
   const btnRef = useRef(null);
 
@@ -37,6 +38,13 @@ const Sort = () => {
       sort_order: "desc",
     },
   ];
+
+  const [activeSort, setActiveSort] = useState(
+    sortItems.findIndex((item, index) => {
+      if (item.sort_by === sort_by && item.sort_order === sort_order)
+        return index;
+    })
+  );
 
   useEffect(() => {
     const clickHandler = (e: any) => {
@@ -80,6 +88,7 @@ const Sort = () => {
             )}
             onClick={() => {
               setActiveSort(index);
+              setShowSort(false);
               router.push(
                 `/?${search && `search=${search}&`}sort_by=${
                   sortItems[index].sort_by
