@@ -2,7 +2,11 @@ import Image from "next/image";
 import { Button } from "@src/components/";
 import { getFilteredOffers } from "@src/services/api";
 
-export default async function Items({ searchParams }: { searchParams: any }) {
+export default async function Items({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
   const data = await getFilteredOffers({
     amount: searchParams.search,
     sort_by: searchParams.sort_by,

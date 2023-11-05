@@ -23,6 +23,7 @@ const Search = () => {
         value={searchValue ? String(searchValue) : ""}
         onChange={(e) => setSeacrh(e.target.value)}
       />
+
       <Button
         text="Search"
         className="w-[310px] text-[16px] md:w-full"

@@ -6,7 +6,9 @@ export const getLoanPurposes = async () => {
   return response.json();
 };
 
-export const getFilteredOffers = async (params: any) => {
+export const getFilteredOffers = async (params: {
+  [key: string]: string | string[] | undefined;
+}) => {
   const response = await fetch(
     `https://api.borrowly.ca/filteredOffers?${
       params.amount && `amount=${params.amount}`
