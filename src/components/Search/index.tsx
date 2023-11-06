@@ -7,8 +7,7 @@ import { useState } from "react";
 const Search = () => {
   const searchParams = useSearchParams();
   const amount = searchParams.get("amount") || "";
-  const sort_by = searchParams.get("sort_by") || "";
-  const sort_order = searchParams.get("sort_order") || "";
+  const params = new URLSearchParams(searchParams);
 
   const [searchValue, setSeacrh] = useState(amount);
 
@@ -28,14 +27,12 @@ const Search = () => {
         text="Search"
         className="w-[310px] text-[16px] md:w-full"
         clickHandler={() => {
-          router.push(
-            `/?${searchValue && `amount=${searchValue}&`}${
-              sort_by && `sort_by=${sort_by}&sort_order=${sort_order}`
-            }`,
-            {
-              scroll: false,
-            }
-          );
+          searchValue
+            ? params.set("amount", `${searchValue}`)
+            : params.delete("amount");
+          router.push(`/?${params.toString()}`, {
+            scroll: false,
+          });
         }}
       />
     </div>

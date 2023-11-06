@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 
-import { Intro, Items, LoanPurposes, Sort, Search } from "@src/components/";
+import {
+  Intro,
+  Items,
+  LoanPurposes,
+  Sort,
+  Search,
+  Button,
+} from "@src/components/";
 
 export const metadata: Metadata = {
   title: "Home",

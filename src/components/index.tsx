@@ -7,6 +7,7 @@ import LoanPurposes from "@src/components/LoanPurposes";
 import Sort from "@src/components/Sort";
 import Search from "@src/components/Search";
 import Items from "@src/components/Items";
+import LoanPurposesItem from "@src/components/LoanPurposesItem";
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   Sort,
   Search,
   Items,
+  LoanPurposesItem,
 };

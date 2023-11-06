@@ -10,9 +10,10 @@ const Sort = () => {
   const router = useRouter();
 
   const searchParams = useSearchParams();
-  const amount = searchParams.get("amount") || "";
   const sort_by = searchParams.get("sort_by") || "";
   const sort_order = searchParams.get("sort_order") || "";
+
+  const params = new URLSearchParams(searchParams);
 
   const btnRef = useRef(null);
 
@@ -88,14 +89,13 @@ const Sort = () => {
             onClick={() => {
               setActiveSort(index);
               setShowSort(false);
-              router.push(
-                `/?${amount && `amount=${amount}&`}sort_by=${
-                  sortItems[index].sort_by
-                }&sort_order=${sortItems[index].sort_order}`,
-                {
-                  scroll: false,
-                }
-              );
+
+              params.set("sort_by", `${sortItems[index].sort_by}`);
+              params.set("sort_order", `${sortItems[index].sort_order}`);
+
+              router.push(`/?${params.toString()}`, {
+                scroll: false,
+              });
             }}
           >
             {item.text}
