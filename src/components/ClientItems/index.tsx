@@ -38,8 +38,8 @@ const ClientItems = () => {
           (e.target.documentElement.scrollTop + window.innerHeight) <
         1
       ) {
-        setCurrentPage((prevState) => prevState + 1);
         setLoading(true);
+        setCurrentPage((prevState) => prevState + 1);
       }
     }
   };
