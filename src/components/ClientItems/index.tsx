@@ -15,7 +15,7 @@ const ClientItems = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    currentPage &&
+    loading &&
       (async function () {
         const cards = await getFilteredOffers(
           params.toString(),
@@ -24,7 +24,7 @@ const ClientItems = () => {
         setData([...data, ...cards]);
         setLoading(false);
       })();
-  }, [currentPage]);
+  }, [loading]);
 
   useEffect(() => {
     setCurrentPage(0);
