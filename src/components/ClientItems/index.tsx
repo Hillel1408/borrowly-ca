@@ -32,9 +32,9 @@ const ClientItems = () => {
     if (
       e.target.documentElement.scrollHeight -
         (e.target.documentElement.scrollTop + window.innerHeight) <
-      1
+      2
     ) {
-      setCurrentPage((prevState) => prevState + 10);
+      setCurrentPage((prevState) => prevState + 1);
     }
   };
 
