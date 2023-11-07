@@ -21,7 +21,7 @@ const ClientItems = () => {
           params.toString(),
           `${12 * currentPage}`
         );
-        setData([...data, ...cards]);
+        setData((prev) => [...prev, ...cards]);
         setLoading(false);
       })();
   }, [loading]);
