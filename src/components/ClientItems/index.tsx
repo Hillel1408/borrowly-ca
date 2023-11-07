@@ -32,7 +32,7 @@ const ClientItems = () => {
     if (
       e.target.documentElement.scrollHeight -
         (e.target.documentElement.scrollTop + window.innerHeight) <
-      2
+      10
     ) {
       setCurrentPage((prevState) => prevState + 1);
     }
