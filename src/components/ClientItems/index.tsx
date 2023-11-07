@@ -12,6 +12,8 @@ const ClientItems = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [data, setData] = useState<{}[]>([]);
 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     currentPage &&
       (async function () {
@@ -20,6 +22,7 @@ const ClientItems = () => {
           `${12 * currentPage}`
         );
         setData([...data, ...cards]);
+        setLoading(false);
       })();
   }, [currentPage]);
 
@@ -29,12 +32,15 @@ const ClientItems = () => {
   }, [searchParams]);
 
   const scrollHandler = async (e: any) => {
-    if (
-      e.target.documentElement.scrollHeight -
-        (e.target.documentElement.scrollTop + window.innerHeight) <
-      10
-    ) {
-      setCurrentPage((prevState) => prevState + 1);
+    if (!loading) {
+      if (
+        e.target.documentElement.scrollHeight -
+          (e.target.documentElement.scrollTop + window.innerHeight) <
+        1
+      ) {
+        setCurrentPage((prevState) => prevState + 1);
+        setLoading(true);
+      }
     }
   };
 
